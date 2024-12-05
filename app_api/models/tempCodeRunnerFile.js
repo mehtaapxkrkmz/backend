@@ -1,0 +1,1 @@
+mongodb+srv://mehtapxkrkmz6:1234SDUsdu@cluster0.nrgcr.mongodb.net/mekanbul?retryWrites=true&w=majority&appName=Cluster0
