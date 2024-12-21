@@ -1,9 +1,7 @@
 var mongoose=require("mongoose");
 var Venue=mongoose.model("venue");
 
-const createResponse=function(res,status,content){
-    res.status(status).json(content);
-}
+
 
 var converter=(function(){
     var earthRadius=6371;//km
@@ -19,14 +17,18 @@ var converter=(function(){
     };
 })();
 
-const listVenues=function(req,res){
+const createResponse=function(res,status,content){
+    res.status(status).json(content);
+}
+
+const listVenues=async function(req,res){
 var lat=parseFloat(req.query.lat)||0;
     var long=parseFloat(req.query.long)||0;
     var point={type:"Point",coordinates:[lat,long]};
     var geoOptions={distanceField:"dis",spherical:true,
         maxDistance:converter.radian2Kilometer(100)};
     try{
-        Venue.aggregate([
+        await Venue.aggregate([
             { $geoNear:{
                 near:point,
                 ...geoOptions,

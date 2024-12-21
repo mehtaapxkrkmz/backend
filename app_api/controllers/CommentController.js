@@ -82,7 +82,7 @@ const getComment=async function(req,res){
 
     }
     catch(error){
-        createResponse(res,"404",{"status":"Böyle bir yorum yok"});
+        createResponse(res,"404",{"status":"Böyle bir durum yok"});
     }
 
 }
@@ -130,7 +130,7 @@ const deleteComment = async function (req, res) {
     } catch (error) {
         createResponse(res, "400", error);
     }
-};
+}
 
 module.exports={
     addComment,
