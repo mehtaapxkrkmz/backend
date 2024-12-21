@@ -1,7 +1,7 @@
 var mongoose=require('mongoose');
-//var dbURI="mongodb+srv://mehtapxkrkmz6:1234SDUsdu@cluster0.nrgcr.mongodb.net/mekanbul?retryWrites=true&w=majority&appName=Cluster0";
+var dbURI="mongodb+srv://mehtapxkrkmz6:1234SDUsdu@cluster0.nrgcr.mongodb.net/mekanbul?retryWrites=true&w=majority&appName=Cluster0";
 
-var dbURI="mongodb://localhost/mekanbul";
+//var dbURI="mongodb://localhost/mekanbul";
 mongoose.connect(dbURI);
 
 mongoose.connection.on("connected",function(){
